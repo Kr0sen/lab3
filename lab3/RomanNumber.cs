@@ -7,6 +7,8 @@
             int i;
             if (n == 0)
                 throw new RomanNumberException("Constructor: n is equal to zero.");
+            if (n >= 4000)
+                throw new RomanNumberException("Constructor: n more than 3999.");
             Number = n;
             RomanString = "";
             for (i = 0; i < Arr_Size; ++i)
@@ -22,8 +24,8 @@
         {
             if (n1 == null || n2 == null)
                 throw new RomanNumberException("Add: at least one object is null.");
-            if (n1.Number + n2.Number > ushort.MaxValue)
-                throw new RomanNumberException("Add: sum exceeds ushort max value.");
+            if (n1.Number + n2.Number >= 4000)
+                throw new RomanNumberException("Add: sum exceeds 3999.");
             return new RomanNumber((ushort)(n1.Number + n2.Number));
         }
         public static RomanNumber operator -(RomanNumber? n1, RomanNumber? n2)
@@ -38,8 +40,8 @@
         {
             if (n1 == null || n2 == null)
                 throw new RomanNumberException("Mul: at least one object is null.");
-            if (n1.Number * n2.Number > ushort.MaxValue)
-                throw new RomanNumberException("Mul: result exceeds ushort max value.");
+            if (n1.Number * n2.Number >= 4000)
+                throw new RomanNumberException("Mul: result exceeds 3999.");
             return new RomanNumber((ushort)(n1.Number * n2.Number));
         }
         public static RomanNumber operator /(RomanNumber? n1, RomanNumber? n2)
@@ -60,7 +62,7 @@
         }
         public int CompareTo(object? obj)
         {
-            if (this is not null && obj is RomanNumber)
+            if (obj is RomanNumber)
                 return this.Number.CompareTo(((RomanNumber)obj).Number);
             throw new RomanNumberException("CompareTo: obj is null or not RomanNumber.");
         }

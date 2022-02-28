@@ -10,12 +10,12 @@ namespace lab3
         {
             RomanNumber n1, n2;
             RomanNumber[] array = { new RomanNumber(10),
-                new RomanNumber(32323), new RomanNumber(10000),
-                new RomanNumber(4521),new RomanNumber(1),
+                new RomanNumber(2323), new RomanNumber(1000),
+                new RomanNumber(3521),new RomanNumber(1),
                 new RomanNumber(11),new RomanNumber(10)};
 
-            n1 = new RomanNumber(23456);
-            n2 = new RomanNumber(5123);
+            n1 = new RomanNumber(2456);
+            n2 = new RomanNumber(1123);
 
             Console.WriteLine("Unsorted array:");
             foreach (RomanNumber n in array)
@@ -30,17 +30,17 @@ namespace lab3
             }
             Console.WriteLine("");
 
-            // n1: MMMMMMMMMMMMMMMMMMMMMMMCDLVI
-            // n2: MMMMMCXXIII
+            // n1: MMCDLVI
+            // n2: MCXXIII
             Console.WriteLine("n1: {0}\nn2: {1}", (n1).ToString(), (n2).ToString());
 
-            // n1+n2: MMMMMMMMMMMMMMMMMMMMMMMMMMMMDLXXIX
+            // n1+n2: MMMDLXXIX
             Console.WriteLine("n1+n2: {0}", (n1 + n2).ToString());
 
-            // n1-n2: MMMMMMMMMMMMMMMMMMCCCXXXIII
+            // n1-n2: MCCCXXXIII
             Console.WriteLine("n1-n2: {0}", (n1 - n2).ToString());
 
-            // n1/n2: IV
+            // n1/n2: II
             Console.WriteLine("n1/n2: {0}", (n1 / n2).ToString());
 
             try
@@ -53,10 +53,10 @@ namespace lab3
             }
             finally
             {
-                n1 = new RomanNumber(2509);
-                n2 = new RomanNumber(5);
-                // n1*n2: MMMMMMMMMMMMDXLV
-                Console.WriteLine("2509*5: {0}", (n1 * n2).ToString());
+                n1 = new RomanNumber(1509);
+                n2 = new RomanNumber(2);
+                // n1*n2: MMMXVIII
+                Console.WriteLine("{0}*{1}: {2}", n1, n2, (n1 * n2).ToString());
             }
         }
     }
